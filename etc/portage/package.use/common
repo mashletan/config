@@ -1,0 +1,29 @@
+media-libs/mesa X
+media-fonts/noto-cjk X
+media-fonts/noto-emoji X
+media-libs/libglvnd X
+x11-libs/cairo X
+x11-libs/pango X
+x11-libs/libxkbcommon X
+media-libs/libva X
+dev-qt/qtbase X
+media-video/ffmpeg X libaom libplacebo srt rubberband lzma lame libcaca dvd doc bluray
+kde-frameworks/kguiaddons X
+kde-frameworks/kwindowsystem X
+gui-libs/wlroots X
+gui-wm/sway X tray wallpapers
+media-libs/libepoxy X
+media-video/mpv rubberband libcaca archive
+media-video/pipewire sound-server extra
+sci-libs/libqalculate icu
+media-libs/freetype harfbuzz
+app-text/xmlto text
+app-misc/vifm -vim -vim-syntax
+dev-debug/gdb debuginfod lzma source-highlight
+sys-devel/gcc jit graphite doc
+dev-python/pyqt6 qml
+sys-libs/zlib minizip
+media-gfx/krita color-management gif heif
+sys-libs/glibc doc
+dev-vcs/git doc highlight
+app-emulation/qemu virgl virtfs zstd usb doc spice plugins lzo iscsi

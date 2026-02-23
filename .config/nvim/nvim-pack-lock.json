@@ -1,0 +1,24 @@
+{
+  "plugins": {
+    "mini.pick": {
+      "rev": "7c0a674f620ddc701903b887b2dade836b23ea79",
+      "src": "https://github.com/nvim-mini/mini.pick"
+    },
+    "nvim-lspconfig": {
+      "rev": "92ee7d42320edfbb81f3cad851314ab197fa324a",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "oil.nvim": {
+      "rev": "f55b25e493a7df76371cfadd0ded5004cb9cd48a",
+      "src": "https://github.com/stevearc/oil.nvim"
+    },
+    "undotree": {
+      "rev": "d8f99084d98c32f651860eb0baaf89759f91debc",
+      "src": "https://github.com/mbbill/undotree"
+    },
+    "zig.vim": {
+      "rev": "2f53c35bee0d64a1d417d47c894a3cbb6663dff4",
+      "src": "https://codeberg.org/ziglang/zig.vim"
+    }
+  }
+}
