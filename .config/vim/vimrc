@@ -1,0 +1,21 @@
+scriptencoding utf-8
+
+syntax on
+set nomodeline
+set nocompatible
+set noswapfile
+
+set ruler
+set number
+set confirm
+set undodir=~/.local/share/vim/undodir/
+set undofile
+set scrolloff=25
+set autoindent
+set relativenumber
+
+colorscheme default
+
+let g:netrw_dirhistmax = 0
+
+nmap <space>r :!clear && ./build.sh<CR>
