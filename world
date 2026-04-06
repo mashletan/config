@@ -1,3 +1,4 @@
+app-admin/pwgen
 app-admin/syslog-ng
 app-arch/7zip
 app-cdr/cdemu
@@ -29,7 +30,6 @@ gui-libs/xdg-desktop-portal-termfilechooser
 gui-wm/hyprland
 media-fonts/noto-cjk
 media-fonts/noto-emoji
-media-gfx/maim
 media-plugins/alsa-plugins
 media-plugins/alsaequal
 media-sound/alsa-utils
@@ -40,7 +40,6 @@ net-dns/bind-tools
 net-libs/nodejs
 net-misc/yt-dlp
 net-p2p/qbittorrent
-net-vpn/i2pd
 sci-misc/llama-cpp
 sys-apps/man-pages-posix
 sys-apps/smartmontools
@@ -50,20 +49,8 @@ sys-block/zram-init
 sys-boot/grub
 sys-firmware/intel-microcode
 sys-fs/btrfs-progs
-sys-fs/ncdu
 sys-kernel/linux-firmware
 sys-process/htop
 sys-process/nvtop
 virtual/wine
 www-client/brave-browser
-www-client/lynx
-x11-apps/xev
-x11-apps/xinit
-x11-base/xorg-drivers
-x11-base/xorg-server
-x11-misc/dmenu
-x11-misc/dunst
-x11-misc/xclip
-x11-misc/xdotool
-x11-terms/kitty
-x11-wm/dwm
