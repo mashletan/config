@@ -1,0 +1,26 @@
+app-editors/vim lua vim-pager terminal
+media-video/ffmpeg sixel libaom libplacebo srt rubberband lzma lame libcaca dvd doc bluray xvid theora
+gui-wm/sway wallpapers
+media-video/mpv sixel rubberband libcaca archive
+#media-video/pipewire jack-sdk pipewire-alsa sound-server extra
+sci-libs/libqalculate icu
+media-libs/freetype harfbuzz
+app-text/xmlto text
+dev-debug/gdb debuginfod lzma source-highlight
+sys-devel/gcc jit graphite doc
+dev-python/pyqt6 qml
+sys-libs/zlib minizip
+media-gfx/krita color-management gif heif
+media-libs/opus custom-modes
+media-sound/qtractor rubberband libsamplerate
+sys-libs/glibc doc
+dev-vcs/git doc highlight
+app-emulation/qemu virgl virtfs zstd usb doc spice plugins lzo iscsi
+media-libs/libsdl2 gles2 
+sci-misc/llama-cpp curl flexiblas opencl
+www-client/lynx cjk gnutls
+app-emulation/wine-vanilla dos
+media-plugins/alsa-plugins libsamplerate
+media-libs/freetype brotli
+sci-physics/bullet double-precision
+media-libs/opensubdiv tbb

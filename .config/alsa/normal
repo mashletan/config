@@ -1,0 +1,16 @@
+<confdir:alsa.conf>
+
+pcm.dmixer {
+    type dmix
+    ipc_key 1024
+    ipc_perm 0666
+    slave {
+        pcm "hw:0,0"
+        rate 48000
+    }
+}
+
+pcm.!default {
+    type plug
+    slave.pcm "dmixer"
+}
