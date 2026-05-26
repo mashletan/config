@@ -1,0 +1,22 @@
+abi <abi/custom_abi>,
+
+include <local/base>
+include <local/console>
+
+/usr/bin/bash mr,
+/usr/bin/cut rix,
+/usr/bin/{grep,egrep} rix,
+/usr/bin/head rix,
+/usr/bin/sed rix,
+/usr/bin/tr rix,
+/usr/bin/which rix,
+/usr/bin/xdg-mime rix,
+/usr/bin/xdg-open r,
+/usr/bin/mimeopen ix,
+/usr/bin/mimetype ix,
+/usr/bin/xdg-mime ix,
+/usr/bin/xdg-settings ix,
+
+/var/lib/menu-xdg/applications/ r,
+owner /home/*/.local/share/applications/{,*.desktop} r,
+owner /home/*/.config/mimeapps.list r,

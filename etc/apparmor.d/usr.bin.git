@@ -1,0 +1,11 @@
+abi <abi/custom_abi>,
+
+profile /usr/bin/git {
+	network,
+
+	deny /etc/shadow w,
+	deny /etc/passwd w,
+
+	owner /home/*/Repos/** rwlkm,
+	owner /var/** rwlkm,
+}

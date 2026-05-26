@@ -1,0 +1,89 @@
+abi <abi/custom_abi>,
+
+profile brave-browser /opt/brave.com/brave/brave-browser {
+  include <local/base>
+  include <local/audio>
+  include <local/console>
+  include <local/gpu>
+  include <local/xdg-open>
+
+  deny capability sys_admin,
+
+  network,
+  signal,
+  ptrace,
+  userns,
+
+  /dev/ r,
+  /dev/zram* r,
+  /dev/disk/by-uuid/ r,
+  /dev/sd* r,
+
+  /proc/[0-9]*/fd/* w,
+  /proc/[0-9]*/setgroups w,
+  /proc/[0-9]*/clear_refs w,
+  /proc/[0-9]*/oom_score_adj w,
+  /proc/[0-9]*/oom_adj w,
+
+  /usr/bin/basename ix,
+  /usr/bin/bash ix,
+  /usr/bin/cat ix,
+  /usr/bin/dbus-send ix,
+  /usr/bin/dirname ix,
+  /usr/bin/env ix,
+  /usr/bin/file ix,
+  /usr/bin/gawk ix,
+  /usr/bin/gsed ix,
+  /usr/bin/mkdir ix,
+  /usr/bin/mpv ix,
+  /usr/bin/readlink ix,
+  /usr/bin/realpath ix,
+  /usr/bin/touch ix,
+  /usr/bin/uname ix,
+  /usr/bin/xprop ix,
+
+  /opt/brave.com/brave/** mrwkix,
+  /opt/brave.com/brave/chrome-sandbox Px -> brave-browser//chrome-sandbox,
+
+  owner /dev/shm/* rw,
+  owner /home/*/.cache/** rw,
+  owner /home/*/.config/BraveSoftware/** rwk,
+  owner /home/*/.config/alsa/* r,
+  owner /home/*/.config/mimeapps.list r,
+  owner /home/*/.local/share/applications{,/**} r,
+  owner /home/*/.local/share/icons/** r,
+  owner /home/*/.local/share/mime/** r,
+  owner /home/*/.local/share/mimeapps.list rw,
+  owner /home/*/.local/share/pki{,/**} rwlk,
+  owner /home/*/Downloads/{,**}  rw,
+  owner /home/*/Pictures/{,**}  rw,
+  owner /home/*/Videos/{,**}  rw,
+  owner /home/*/Music/{,**}  rw,
+  owner /home/*/Documents/{,**}  rw,
+  owner /home/*/.pki{,/**} rwlk,
+}
+
+profile brave-browser//chrome-sandbox /opt/brave.com/brave/chrome-sandbox {
+  include <local/base>
+
+  network,
+
+  capability sys_admin,
+  capability sys_chroot,
+  capability dac_override,
+
+  signal,
+  ptrace,
+  userns,
+
+  owner /dev/shm/* rw,
+  owner /home/*/.cache/** rw,
+  owner /home/*/.config/BraveSoftware/ r,
+  owner /home/*/.config/BraveSoftware/** rwk,
+
+  /proc/[0-9]*/oom_score_adj w,
+  /proc/[0-9]*/oom_adj w,
+
+  /opt/brave.com/brave/** mr,
+  /opt/brave.com/brave/brave mrPx -> brave-browser,
+}

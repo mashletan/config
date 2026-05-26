@@ -1,0 +1,38 @@
+set -o vi
+shopt -s extglob
+shopt -s globstar
+
+HISTFILESIZE=999999
+HISTSIZE=999999
+HISTFILE="$XDG_DATA_HOME/bash/history"
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
+export MANSECT="2:3:2p:3p:1:n:l:8:0:5:4:9:6:7"
+export GRIM_DEFAULT_DIR="$XDG_PICTURES_DIR/Screenshots"
+
+fzy_history() {
+	local selected=$(builtin history | tac | fzy)
+	if [ -n "$selected" ]; then
+		local cmd=$(echo "$selected" | sed -E 's/^[[:space:]]*[0-9]+[[:space:]]+//')
+		READLINE_LINE="$cmd"
+		READLINE_POINT=${#READLINE_LINE}
+	fi
+}
+bind -x '"\C-r": fzy_history'
+
+fzy_search() {
+	local cmd="${READLINE_LINE% *}"
+	local cmd_last_word="${READLINE_LINE##* }"
+	local selected=$(plocate "$cmd_last_word" | fzy)
+	if [ -n "$selected" ]; then
+		if [ "$cmd" != "$cmd_last_word" ]; then
+			READLINE_LINE="$cmd"
+		else
+			READLINE_LINE=""
+		fi
+		READLINE_LINE="$READLINE_LINE '$selected'"
+		READLINE_POINT=${#READLINE_LINE}
+	fi
+}
+
+bind -x '"\C-t": fzy_search'

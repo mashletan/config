@@ -1,0 +1,12 @@
+#tty="$(tty | sed -e 's|/dev/tty||')"
+#if [[ "$tty" =~ ^[0-9]+$ ]]; then
+#	alias startx="exec startx -- vt$tty"
+#else
+#	echo "bad tty"
+#fi
+
+export GNUPGHOME=${XDG_CONFIG_HOME}/gnupg
+export ALSA_CONFIG_PATH=${XDG_CONFIG_HOME}/alsa/equalizer
+export WINEPREFIX=/media/hdd0/Games/wine/wine32
+export http_proxy="http://127.0.0.1:8118"
+export https_proxy="http://127.0.0.1:8118"

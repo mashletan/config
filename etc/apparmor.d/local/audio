@@ -1,0 +1,12 @@
+abi <abi/custom_abi>,
+
+/dev/audio*     rw,
+/dev/dsp*       rw,
+/dev/midi*      rw,
+/dev/mixer*     rw,
+/dev/snd/*      rw,
+/dev/sound/*    rw,
+
+/proc/asound/** rw,
+
+/home/*/.config/alsa/* r,

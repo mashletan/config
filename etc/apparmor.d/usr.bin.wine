@@ -1,0 +1,49 @@
+abi <abi/custom_abi>,
+
+profile wine /usr/bin/wine{,-vanilla*,-proton-*} {
+  include <local/base>
+  include <local/audio>
+  include <local/console>
+  include <local/gpu>
+
+  deny capability sys_admin,
+
+  deny network inet,
+  deny network inet6,
+
+  network unix,
+  network netlink,
+
+  /dev/ r,
+  /dev/zram* r,
+  /dev/disk/by-uuid/ r,
+  /dev/sd* r,
+  /dev/ntsync r,
+
+  /proc/[0-9]*/fd/* w,
+  /proc/[0-9]*/task/[0-9]*/comm w,
+  /proc/[0-9]*/setgroups w,
+  /proc/[0-9]*/clear_refs w,
+  /proc/[0-9]*/oom_score_adj w,
+  /proc/[0-9]*/oom_adj w,
+
+  /usr/lib/wine{,*}/** mrix,
+  /usr/bin/wine* mrix,
+
+  /var/cache/** r,
+
+  owner /dev/shm/* rw,
+  owner /home/*/.cache/** rw,
+  owner /home/*/.local/share/vulkan/** r,
+  owner /home/*/Downloads/** rwixkl,
+
+  owner /run/media/*/hdd0/ r,
+  owner /run/media/*/hdd0/Games/** rwixkl,
+  owner /run/media/*/hdd0/wine/** rwixkl,
+  owner /run/media/*/hdd0/proton/** rwixkl,
+
+  #owner /home/*/hdd0/ r,
+  #owner /home/*/hdd0/Games/** rwixkl,
+  #owner /home/*/hdd0/wine/** rwixkl,
+  #owner /home/*/hdd0/proton/** rwixkl,
+}

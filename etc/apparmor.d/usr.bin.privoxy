@@ -1,0 +1,14 @@
+abi <abi/custom_abi>,
+
+profile privoxy /usr/bin/privoxy
+{
+  include <local/base>
+  network,
+
+  capability setgid,
+  capability setuid,
+
+  /run/privoxy.pid  rw,
+
+  /var/log/privoxy/privoxy.log  rw,
+}

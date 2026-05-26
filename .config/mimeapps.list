@@ -1,0 +1,19 @@
+
+[Default Applications]
+text/html=brave-browser.desktop
+x-scheme-handler/http=brave-browser.desktop
+x-scheme-handler/https=brave-browser.desktop
+x-scheme-handler/about=brave-browser.desktop
+x-scheme-handler/unknown=brave-browser.desktop
+image/webp=mpv.desktop
+image/jpeg=mpv.desktop
+image/png=mpv.desktop
+image/jpg=mpv.desktop
+image/gif=mpv.desktop
+video/mp4=mpv.desktop
+video/mkv=mpv.desktop
+video/webm=mpv.desktop
+video/MP2T=mpv.desktop
+application/zip=mpv.desktop
+application/vnd.rar=mpv.desktop
+application/x-7z-compressed=mpv.desktop

@@ -1,0 +1,21 @@
+abi <abi/custom_abi>,
+
+/usr/bin/qbittorrent-nox {
+  include <local/base>
+  network,
+
+  /usr/bin/qbittorrent-nox mr,
+
+  /home/*/.config/qBittorrent/** rwkl,
+  /home/*/.local/share/qBittorrent/** rwkl,
+
+  /dev/disk/by-label{,/*} r,
+
+  /media/hdd0/Anime r,
+  /media/hdd0/Manga r,
+  /media/hdd0/Music r,
+
+  /media/hdd0/Anime/** rw,
+  /media/hdd0/Manga/** rw,
+  /media/hdd0/Music/** rw,
+}

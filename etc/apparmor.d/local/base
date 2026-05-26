@@ -1,0 +1,54 @@
+abi <abi/custom_abi>,
+
+/dev/log        w,
+/dev/null       rw,
+/dev/random     r,
+/dev/urandom    r,
+/dev/zero       rw,
+
+audit deny /etc/apparmor.d/{,**}        mrwkl,
+audit deny /etc/ima/{,**}               mrwkl,
+audit deny /etc/ssh/{,**}               mrwkl,
+
+/etc/**                                 r,
+/etc/ld.so.cache                        mr,
+
+audit deny /home/*/.ssh/{,**}           mrwkl,
+
+/home/*/.local/share/keyrings/**        r,
+/home/*/.local/share/applications/**    r,
+/home/*/.local/share/icons/**           r,
+/home/*/.local/share/mime/**            r,
+/home/*/.config/mimeapps.list           r,
+
+/proc/{,**}                             r,
+
+audit deny /root/.ssh/{,**}             mrwkl,
+
+/run/{,**}                              r,
+
+audit deny /sys/kernel/security/{,**}   mrwkl,
+/sys/{,**}                              r,
+
+/usr/bin/{,**}                          r,
+
+/usr/lib/**                             r,
+/usr/lib/**.so*                         mr,
+
+/usr/lib64/**                           r,
+/usr/lib64/**.so*                       mr,
+
+/usr/share/**                           r,
+
+owner /var/tmp/**                       rwkl,
+/var/tmp/                               rw,
+
+owner /tmp/**                           rwkl,
+/tmp/                                   rw,
+
+signal (receive) peer=unconfined,
+signal (receive, send) set=("exists"),
+
+unix (create),
+unix (receive) peer=(label=unconfined),
+unix (getattr, getopt, setopt, shutdown),

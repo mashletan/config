@@ -1,0 +1,16 @@
+abi <abi/custom_abi>,
+
+profile unbound /usr/bin/unbound
+{
+  include <local/base>
+  network,
+
+  capability net_bind_service,
+  capability setgid,
+  capability setuid,
+  capability sys_chroot,
+  capability sys_resource,
+  capability net_admin,
+
+  /run/unbound.pid  rw,
+}

@@ -1,0 +1,7 @@
+abi <abi/custom_abi>,
+
+/dev/udmabuf rw,
+/dev/dri/    r,
+/dev/dri/**  rw,
+
+owner /home/*/.local/share/vulkan/** r,

@@ -1,0 +1,7 @@
+abi <abi/custom_abi>,
+
+profile /usr/bin/wget {
+	include <local/base>
+	network,
+	/var/** rw,
+}

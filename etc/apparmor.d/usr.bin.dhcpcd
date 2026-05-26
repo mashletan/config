@@ -1,0 +1,26 @@
+abi <abi/custom_abi>,
+
+profile dhcpcd /usr/bin/dhcpcd {
+  include <local/base>
+  include <local/console>
+
+  network,
+
+  capability dac_override,
+  capability net_admin,
+  capability net_bind_service,
+  capability net_raw,
+
+  /etc/resolv.conf rw,
+  /run/dhcpcd.pid rwk,
+  /run/dhcpcd.sock rwk,
+  /run/dhcpcd.unpriv.sock rw,
+  /run/dhcpcd{,/**} rwlk,
+  /usr/bin/cmp ix,
+  /usr/bin/hostname ix,
+  /usr/bin/rm ix,
+  /usr/bin/sed ix,
+  /usr/lib/dhcpcd/** rix,
+  /var/lib/dhcpcd/* rw,
+  owner / r,
+}

@@ -1,0 +1,8 @@
+abi <abi/custom_abi>,
+
+profile /usr/bin/curl {
+	include <local/base>
+	network,
+
+	/var/** rw,
+}
